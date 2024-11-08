@@ -9,7 +9,7 @@
 #define iohd_h
 
 void sumUsingPointers(const int *term1, const int *term2, int *sum);
-void printInformation(void);
+void printInfo(void);
 void pointersArithmetic(void);
 
 #endif /* iohd_h */

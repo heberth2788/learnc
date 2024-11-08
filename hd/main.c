@@ -22,7 +22,7 @@ int main(int argc, const char *argv[]) {
 //    sumThreeIntsUsingPointers(&term1, &term2, &sum);
 //    printf("The sum is = %d \n\n", sum);
     
-//    printInformation();
+//    printInfo();
     
     return 0;
 }
@@ -68,7 +68,7 @@ void sumUsingPointers(const int *term1, const int *term2, int *sum) {
     *sum = *term1 + *term2 + c;
 }
 
-void printInformation(void) {
+void printInfo(void) {
     
     int currYear = 2024;
     printf("currYear : %d \n", currYear);
