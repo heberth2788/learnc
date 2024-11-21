@@ -14,8 +14,8 @@
             filePath = "hd/main.c"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "pointersArithmetic()"
             landmarkType = "9">
          </BreakpointContent>
@@ -30,9 +30,25 @@
             filePath = "hd/main.c"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "pointersArithmetic()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F455887F-610B-41E2-A92B-1D724FD5E3A4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hd/arrays/arrays.c"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "passingArrayToFunction()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

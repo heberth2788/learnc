@@ -10,4 +10,9 @@
 
 #include <stdio.h>
 
+void testAutoStorageClass(void);
+void testRegisterStorageClass(void);
+void testExternStorageClass(void);
+void testStaticStorageClass(void);
+
 #endif /* cstorageclass_h */

@@ -10,4 +10,6 @@
 
 #include <stdio.h>
 
+void usingNewTypes(void);
+
 #endif /* family_h */
