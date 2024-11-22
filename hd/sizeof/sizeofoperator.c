@@ -26,6 +26,7 @@ size_t sizeOfOperator(void) {
 }
 
 void printSizeofPrimitiveDatatypes(void) {
+<<<<<<< HEAD
     
     char c = 'h';
     printf("sizeof(char) = %zu bytes\n", sizeof(c));
@@ -57,4 +58,22 @@ void printSizeofPrimitiveDatatypes(void) {
     printf("sizeof(int array[6]) = %zu bytes\n", sizeof(array));
     int * pArray = array;
     printf("sizeof(pointer * to array) = %zu bytes\n", sizeof(pArray));
+=======
+    char c = 'h';
+    printf("%zu", sizeof(c));
+    short s = 1;
+    
+    int i = 2;
+    long l = 3;
+    
+    long long ll = 4;
+    
+    float f = 1.5;
+    double d = 1.6;
+    
+    long double ld = 1.7;
+    
+    size_t e = 5;
+    
+>>>>>>> aee4607c8cda4adc81a68d3f03ec24107f91035a
 }

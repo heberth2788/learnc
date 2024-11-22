@@ -6,6 +6,7 @@
 //
 
 #include "bubblesort.h"
+<<<<<<< HEAD
 
 void swapValues(int * const a, int * const b) {
     int pivot = *a;
@@ -50,3 +51,5 @@ void runBubbleSort(void) {
     bubbleSort(myArray, arraySize);
     printArray("Array ordenado: ", myArray, arraySize);
 }
+=======
+>>>>>>> aee4607c8cda4adc81a68d3f03ec24107f91035a
