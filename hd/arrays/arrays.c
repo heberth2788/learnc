@@ -108,6 +108,7 @@ void usingConstWithPointers(void) {
     // *aPtr3 = 1984; // Error: constant pointer(int *)
     // aPtr3 = &b; // Error: constant variable(aPtr3)
     
+    printf("%p \n", aPtr3);
 }
 
 void pointerToFunction(void) {

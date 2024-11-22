@@ -5,12 +5,13 @@
 //  Created by Heberth Deza on 6/11/24.
 //
 
-#include <stdio.h>
 #include "iohd.h"
 #include "newtypes/family.h"
 #include "storageclasses/cstorageclass.h"
 #include "recursive/recursive.h"
 #include "arrays/arrays.h"
+#include "sortingalgorithms/bubblesort.h"
+#include "sizeof/sizeofoperator.h"
 
 /*
     The "main" function does not need prototype,
@@ -31,8 +32,16 @@
  */
 
 int main(int argc, const char* argv[]) {
+    
+    printSizeofPrimitiveDatatypes();
+    
+//    sizeOfOperator();
   
-    pointerToFunction();
+//    runBubbleSort();
+    
+//    pointerToFunction();
+    
+//    usingConstWithPointers();
     
 //    printingArrayAddress();
     

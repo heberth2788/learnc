@@ -8,6 +8,7 @@
 #ifndef iohd_h
 #define iohd_h
 
+#include <stdio.h>
 void pointerToVoidThenCasting(void);
 void myPrint(void);
 void sumUsingPointers(const int *term1, const int *term2, int *sum);

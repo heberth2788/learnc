@@ -10,34 +10,34 @@
 int myAgeGlobal = 36;
 
 // Basic declaration then typedef
-enum DaugtherA {
+enum daugther_a {
     HEILYA,     // 0
     JOICYA,     // 1
     BERTHLYA    // 2
 };
-typedef enum DaugtherA DautherA2;
+typedef enum daugther_a dauther_a2;
 
 // Recomended declaration
 typedef enum {
     HEILYB,         // 0
     JOICYB = 6,     // 6
     BERTHLYB        // 7
-} DaughterB;
+} daughter_b;
 
 // Redundant declaration(Not recomended)
-typedef enum DaugtherC {
+typedef enum daugther_c {
     HEILYC = 1,     // 1
     JOICYC,         // 2
     BERTHLYC        // 3
-} DaugtherC2;
+} daugther_c2;
 
 void usingNewTypes(void) {
     
-    enum DaugtherA myHeilyA = HEILYA;
-    DautherA2 myHeilyA2 = HEILYA;
+    enum daugther_a myHeilyA = HEILYA;
+    dauther_a2 myHeilyA2 = HEILYA;
     
-    DaughterB myJoicy = JOICYB;
+    daughter_b myJoicy = JOICYB;
     
-    enum DaugtherC myBerthlyC = BERTHLYC;
-    DaugtherC2 myBerthlyCNew = BERTHLYC;
+    enum daugther_c myBerthlyC = BERTHLYC;
+    daugther_c2 myBerthlyCNew = BERTHLYC;
 }
