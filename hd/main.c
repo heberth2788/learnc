@@ -12,6 +12,7 @@
 #include "arrays/arrays.h"
 #include "sortingalgorithms/bubblesort.h"
 #include "sizeof/sizeofoperator.h"
+#include "pointers/pointers.h"
 
 /*
     The "main" function does not need prototype,
