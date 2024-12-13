@@ -14,9 +14,9 @@ size_t sizeOfOperator(void) {
     printf("%zu bytes for int\n", intSize);
     
     int myArray[] = { 1, 2, 3, 4, 5, 6 };
-    size_t myArraySize = sizeof(myArray); // 24 bytes
-    size_t myArrayElementSize = sizeof(myArray[0]); // 4 bytes
-    unsigned long int arrayLong = myArraySize / myArrayElementSize; // 6 elementos en el array
+    size_t myArraySize = sizeof(myArray); // 24 bytes (6 x 4 = 24)
+    size_t myArrayElementSize = sizeof(myArray[0]); // 4 bytes (int = 4 bytes)
+    unsigned long int arrayLong = myArraySize / myArrayElementSize; // 24 / 4 = 6 elementos en el array
     printf("%lu element for my array\n", arrayLong);
     
     int * pMyArray = myArray;
