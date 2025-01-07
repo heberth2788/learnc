@@ -18,5 +18,8 @@ void passingArrayToFunction(void);
 void multiplyArrayByTwo(int ages[], size_t size);
 //void multiplyArrayByTwo(int * ages, size_t size);
 void printingArrayAddress(void);
+void printRelationArrayVsPointer(void);
+void copyStrings(void);
+void arrayOfPointers(void);
 
 #endif /* arrays_h */

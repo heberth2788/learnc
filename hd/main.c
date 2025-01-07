@@ -14,6 +14,8 @@
 #include "sizeof/sizeofoperator.h"
 #include "pointers/pointers.h"
 #include "arrays/multidimensional.h"
+#include "pointers/function_pointer.h"
+#include "charactersandstrings/char_string.h"
 
 /*
     The "main" function does not need prototype,
@@ -35,7 +37,12 @@
 
 int main(int argc, const char * argv[]) {
     
-    copyStrings();
+    testCharFunctions();
+    
+//    arrayOfPointers();
+//    arrayOfPointersToFunctions();
+    
+//    copyStrings();
 //    printRelationArrayVsPointer();
 //    createMultimensionalArray();
     
