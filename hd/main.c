@@ -37,7 +37,10 @@
 
 int main(int argc, const char * argv[]) {
     
-    testCharFunctions();
+    testStringFunctions();
+//    testCharFunctionsAroundPrinting();
+//    testCharFunctionsAroundLowerUpper();
+//    testCharFunctionsAroundDigits();
     
 //    arrayOfPointers();
 //    arrayOfPointersToFunctions();

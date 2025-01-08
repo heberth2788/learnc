@@ -10,7 +10,12 @@
 
 #include <stdio.h>
 #include <ctype.h> // C standar library for characters manipulation
+#include <stdlib.h> // C standar library for string manipulation
 
-void testCharFunctions(void);
+void testCharFunctionsAroundDigits(void);
+void testCharFunctionsAroundLowerUpper(void);
+void testCharFunctionsAroundPrinting(void);
+
+void testStringFunctions(void);
 
 #endif /* char_string_h */
