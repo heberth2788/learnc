@@ -16,6 +16,8 @@
 #include "arrays/multidimensional.h"
 #include "pointers/function_pointer.h"
 #include "charactersandstrings/char_string.h"
+#include "standario/standario.h"
+#include "string/stringlib.h"
 
 /*
     The "main" function does not need prototype,
@@ -37,7 +39,15 @@
 
 int main(int argc, const char * argv[]) {
     
-    testStringFunctions();
+    functionStrcatAndStrncat();
+//    functionStrcpyAndStrncpy();
+    
+//    functionSscanf();
+//    functionSprintf();
+//    functionGetchar();
+//    functionsFgetsAndPutchar();
+    
+//    testStringFunctions();
 //    testCharFunctionsAroundPrinting();
 //    testCharFunctionsAroundLowerUpper();
 //    testCharFunctionsAroundDigits();

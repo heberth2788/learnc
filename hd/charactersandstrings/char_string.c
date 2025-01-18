@@ -103,13 +103,20 @@ void testCharFunctionsAroundPrinting(void) {
 
 void testStringFunctions(void) {
     const char * ptrMyStr = " 36.5 is a good number"; // Ok, it starts with a digit or space
-//    const char * ptrMyStr = "    36  "; // Ok, it starts with a digit or space
+//    const char * ptrMyStr = "    36  "; // Ok, it starts with a digit or space and the digit
 //    const char * ptrMyStr = "The value 36.555 is a good number"; // Wrong, it does not start with a number or space
     char * ptrStr = NULL;
-    
-    double doubleVal = strtod(ptrMyStr, &ptrStr); // strtod means String to Double
-    
+    double doubleVal = strtod(ptrMyStr, &ptrStr); // strtod means: String to Double
     printf("Original string: %s \n", ptrMyStr);
     printf("Double value: %.2f \n", doubleVal);
     printf("The remainder of the string: %s \n", ptrStr);
+    
+    puts("");
+    
+    const char * ptrStrLiteral = "1234567 is another good number";
+    char * ptrStr2 = NULL;
+    unsigned long int unsLongInt = strtoul(ptrStrLiteral, &ptrStr2, 0); // strtoul means: String to Unsigned Long
+    printf("Original string: %s \n", ptrStrLiteral);
+    printf("Unsigned long int: %lu \n", unsLongInt);
+    printf("The remainder of the string: %s \n", ptrStr2);
 }
