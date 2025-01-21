@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		48AF7A482D3EF385001038E2 /* structs.c in Sources */ = {isa = PBXBuildFile; fileRef = 48AF7A472D3EF385001038E2 /* structs.c */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		48A2865D2CDC2CD60015E105 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		48A2865F2CDC2CD60015E105 /* hd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hd; sourceTree = BUILT_PRODUCTS_DIR; };
+		48AF7A462D3EF385001038E2 /* structs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = structs.h; sourceTree = "<group>"; };
+		48AF7A472D3EF385001038E2 /* structs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = structs.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +50,7 @@
 		48A286562CDC2CD60015E105 = {
 			isa = PBXGroup;
 			children = (
+				48AF7A452D3EF329001038E2 /* structunionbitsenum */,
 				48A286612CDC2CD60015E105 /* hd */,
 				48A286602CDC2CD60015E105 /* Products */,
 			);
@@ -55,6 +62,15 @@
 				48A2865F2CDC2CD60015E105 /* hd */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		48AF7A452D3EF329001038E2 /* structunionbitsenum */ = {
+			isa = PBXGroup;
+			children = (
+				48AF7A462D3EF385001038E2 /* structs.h */,
+				48AF7A472D3EF385001038E2 /* structs.c */,
+			);
+			path = structunionbitsenum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AF7A482D3EF385001038E2 /* structs.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
