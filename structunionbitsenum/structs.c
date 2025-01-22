@@ -18,7 +18,11 @@
     memory.
  */
 void declareObjects(void) {
-    struct card myCard; // Declaration of a new variable/object, it reserve memory
+    struct card myCard = { .face = "face", .suit = "suit" }; // Declaration of a new variable/object, it reserve memory
+    struct card myCardW = { .suit = "suit", .face = "face" };
+    struct card myCardX = { .face = "face" };
+    struct card myCardY = { .suit = "suit" };
+    struct card myCardZ = { };
     struct card myCards[3]; // Declaring an array of object
     struct card * myCardPtr = &myCard; // Declaring a pointer to an object of type 'card'
     
@@ -39,9 +43,9 @@ void structOperations(void) {
     // bytes of memory
     
     // Assigning values
-    struct card cardA = {}; // zero initializing
+    struct card cardA = { }; // zero initializing
     cardA.face = "faceA";
-    struct card cardB = {}; // zero initializing
+    struct card cardB = { }; // zero initializing
     cardB.face = "faceB";
     
     cardA = cardB;
