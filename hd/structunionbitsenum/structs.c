@@ -93,3 +93,7 @@ void passStructByReference(struct person * ptrP) {
 void passStructByValue(struct person p) {
     char * name = p.name;
 }
+
+void usingBitFields(void) {
+    
+}

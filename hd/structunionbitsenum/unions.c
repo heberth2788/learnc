@@ -19,14 +19,13 @@ void declareUnionObjects(void) {
     
     union member my = { .fatherAge = 36 };
     
-    me.motherAge = 37;
-    me.rate = 0.5;
-    double rate = me.rate;
+    meu.motherAge = 37;
+    meu.rate = 0.5;
+    double rate = meu.rate;
     
     Memb memberA = { .rate = 0.9 };
     
     union member you = { .rate = 0.5 };
     union member * youPtr = &you;
     double yourRate = youPtr->rate;
-    
 }

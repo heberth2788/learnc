@@ -51,4 +51,29 @@ void accessStructMembers(void);
 void passStructByReference(struct person * ptrP);
 void passStructByValue(struct person p);
 
+/**
+    Bit fields :
+    Use in struct to specify the number of bits in which to store an unsigned or signed int member.
+ */
+struct bitCard { // A bitCard object will be store in 7 bits
+    unsigned int face : 4; // store it in 4 bits, values from 0 to 15
+    unsigned int suit : 2; // store it in 2 bits, values from 0 to 3
+    unsigned int color : 1; // store it in 1 bit, values from 0 to 1
+};
+
+// Assuming a 4-byte-word computer (4 * 8 = 32 bits word)
+struct unnamedBitA {
+    unsigned int a : 13; // 32 - 13 = 19 bits
+    // Unnamed bit field, used as a padding in the struct
+    unsigned int   : 19; // 13 + 19 = 32 bits (A completed word)
+    unsigned int b : 4; // b member is alligned to the next word
+};
+
+// Assuming a 4-byte-word computer (4 * 8 = 32 bits)
+struct unnamedBitB {
+    unsigned int a : 13; // 32 - 13 = 19 bits
+    unsigned int   : 0; // skip the last 19 bits to get a 32 bits word
+    unsigned int b : 4; // b member is alligned to the next word
+};
+
 #endif /* structs_h */

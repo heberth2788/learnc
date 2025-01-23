@@ -18,6 +18,7 @@
 #include "charactersandstrings/char_string.h"
 #include "standario/standario.h"
 #include "string/stringlib.h"
+#include "structunionbitsenum/bits.h"
 
 /*
     The "main" function does not need prototype,
@@ -39,7 +40,11 @@
 
 int main(int argc, const char * argv[]) {
     
-    functionStrcatAndStrncat();
+    showBitwiseOperators();
+//    displayBitsPortable(8);
+//    displayBits();
+    
+//    functionStrcatAndStrncat();
 //    functionStrcpyAndStrncpy();
     
 //    functionSscanf();
@@ -124,8 +129,4 @@ int main(int argc, const char * argv[]) {
 //    printInfo();
     
     return 0;
-}
-
-void myPrint(void) {
-    puts("myPrint");
 }
