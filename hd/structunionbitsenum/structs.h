@@ -45,12 +45,6 @@ typedef struct {
     unsigned int year;
 } Movie; // definition type names
 
-void declareObjects(void);
-void structOperations(void);
-void accessStructMembers(void);
-void passStructByReference(struct person * ptrP);
-void passStructByValue(struct person p);
-
 /**
     Bit fields :
     Use in struct to specify the number of bits in which to store an unsigned or signed int member.
@@ -75,5 +69,22 @@ struct unnamedBitB {
     unsigned int   : 0; // skip the last 19 bits to get a 32 bits word
     unsigned int b : 4; // b member is alligned to the next word
 };
+
+struct myStruct {
+    int a;
+    int b;
+    struct { // anonymous struct
+        int nestedc;
+        int nestedd;
+    };
+    int e;
+};
+
+void declareObjects(void);
+void structOperations(void);
+void accessStructMembers(void);
+void passStructByReference(struct person * ptrP);
+void passStructByValue(struct person p);
+void usingAnonymousStruct(void);
 
 #endif /* structs_h */

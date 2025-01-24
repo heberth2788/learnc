@@ -29,3 +29,12 @@ void declareUnionObjects(void) {
     union member * youPtr = &you;
     double yourRate = youPtr->rate;
 }
+
+void usingAnonymousUnion(void) {
+    union myUnion mu = { };
+    mu.a = 1;
+    mu.b = 2;
+    mu.nestedc = 3;
+    mu.nestedd = 4;
+    mu.e = 5;
+}

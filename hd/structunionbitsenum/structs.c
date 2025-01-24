@@ -97,3 +97,12 @@ void passStructByValue(struct person p) {
 void usingBitFields(void) {
     
 }
+
+void usingAnonymousStruct(void) {
+    struct myStruct ms = { };
+    ms.a = 1;
+    ms.b = 2;
+    ms.nestedc = 3;
+    ms.nestedd = 4;
+    ms.e = 5;
+}

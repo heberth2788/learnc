@@ -10,8 +10,6 @@
 
 #include <stdio.h>
 
-void declareUnionObjects(void);
-
 union member {
     int fatherAge;
     int motherAge;
@@ -43,15 +41,28 @@ union myBitCardInUnion {
 // Assuming a 4-byte-word computer (4 * 8 = 32 bits word)
 union unnamedBitInUnionA {
     unsigned int a : 13;
-    unsigned int   : 19;
+    unsigned int   : 19; // padding 19 bits
     unsigned int b : 4;
 };
 
 // Assuming a 4-byte-word computer (4 * 8 = 32 bits word)
 union unnamedBitInUnionB {
     unsigned int a : 13;
-    unsigned int   : 0;
+    unsigned int   : 0; // skip 19 bits to complete the word(E.g: 32 bits)
     unsigned int b : 4;
 };
+
+union myUnion {
+    int a;
+    int b;
+    union { // anonymous union
+        int nestedc;
+        int nestedd;
+    };
+    int e;
+};
+
+void declareUnionObjects(void);
+void usingAnonymousUnion(void);
 
 #endif /* unions_h */

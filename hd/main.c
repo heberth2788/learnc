@@ -5,7 +5,7 @@
 //  Created by Heberth Deza on 6/11/24.
 //
 
-#include "iohd.h"
+/*#include "iohd.h"
 #include "newtypes/family.h"
 #include "storageclasses/cstorageclass.h"
 #include "recursive/recursive.h"
@@ -18,7 +18,9 @@
 #include "charactersandstrings/char_string.h"
 #include "standario/standario.h"
 #include "string/stringlib.h"
-#include "structunionbitsenum/bits.h"
+#include "structunionbitsenum/bits.h"*/
+#include "structunionbitsenum/enums.h"
+#include "preprocessor/preprocessor.h"
 
 /*
     The "main" function does not need prototype,
@@ -40,7 +42,9 @@
 
 int main(int argc, const char * argv[]) {
     
-    showBitwiseOperators();
+    testEnums();
+    
+//    showBitwiseOperators();
 //    displayBitsPortable(8);
 //    displayBits();
     
