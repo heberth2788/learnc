@@ -18,9 +18,10 @@
 #include "charactersandstrings/char_string.h"
 #include "standario/standario.h"
 #include "string/stringlib.h"
-#include "structunionbitsenum/bits.h"*/
+#include "structunionbitsenum/bits.h"
 #include "structunionbitsenum/enums.h"
-#include "preprocessor/preprocessor.h"
+#include "preprocessor/preprocessor.h"*/
+#include "fileprocessing/fileprocessing.h"
 
 /*
     The "main" function does not need prototype,
@@ -42,7 +43,10 @@
 
 int main(int argc, const char * argv[]) {
     
-    testEnums();
+    readSequentialAccessFile();
+//    createSequentialAccessFile();
+    
+//    testEnums();
     
 //    showBitwiseOperators();
 //    displayBitsPortable(8);
