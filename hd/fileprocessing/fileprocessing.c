@@ -40,8 +40,6 @@ void testFileProcessing(void) {
 void createSequentialAccessFile(void) {
     FILE * filePtr = NULL; // file's pointer
     
-    FILE f;
-    
     // open the file in write mode, exit if unable to create the file
     if ((filePtr = fopen("clients.txt", "w")) == NULL) {
         puts("File could not be openned");
@@ -101,8 +99,148 @@ void readSequentialAccessFile(void) {
         fscanf(filePtr, "%d%29s%lf", &account, name, &balance); // read data from the file
     }
     
-    // means: rebobinar, and put the file position pointer(offset) to the beginning(byte 0)
+    // "rewind" means "rebobinar", and put the file position pointer(offset) to the beginning(byte 0)
     // rewind(filePtr);
     
     fclose(filePtr); // close the file
 }
+
+
+void createRandomAccessFile(void) {
+    // A random access file uses fixed-length records that may be
+    // accessed directly and quickly using a record key.
+    
+    // fwrite, fread : write and read raw bytes. Also can write and read arrays.
+    // fprintf, fscanf : write and read human-readable text format.
+    
+    FILE * fPtr = NULL;
+    
+    puts("Openning the file");
+    
+    // Open the file for writing in binary mode "wb"
+    if ((fPtr = fopen("accounts.dat", "wb")) == NULL) {
+        puts("File could not be opened");
+        return;
+    }
+    
+    // Creating an empty object of type ClientData
+    ClientData blankData = {
+        .account = 0,
+        .lastName = "",
+        .firstName = "",
+        .balance = 0.0,
+    };
+    
+    puts("Writing the file");
+    for (int i = 0; i < 100; i++) {
+        fwrite(&blankData, sizeof(ClientData), 1, fPtr); // writing the file
+    }
+    
+    puts("Closing the file");
+    fclose(fPtr);
+}
+
+/**
+    Clean the struct object
+ */
+void cleanClientData(ClientData * pClientData) {
+    pClientData->account = 0;
+    memset(pClientData->firstName, '\0', sizeof(pClientData->firstName));
+    memset(pClientData->lastName, '\0', sizeof(pClientData->lastName));
+    pClientData->balance = 0.0;
+}
+
+void writeRandomAccessFile(void) {
+    FILE * fPtr = NULL; // pointer to the file
+    puts("Openning the file");
+    
+    // Open the file for writing in binary mode "wb"
+    if ((fPtr = fopen("accounts.dat", "wb")) == NULL) {
+        puts("File could not be opened");
+        return;
+    }
+    
+    ClientData clientData = {
+        .account = 0,
+        .lastName = "",
+        .firstName = "",
+        .balance = 0.0,
+    };
+    
+    printf("%s", "Enter account number(from 1 to 100, 0 to end the input): ");
+    // read the account number into the clientData's account field
+    scanf("%d", &clientData.account);
+    
+    // iterate while account is not 0
+    while (clientData.account != 0) {
+        printf("%s","Enter the lastname, firstname and balance: ");
+        // read stdin(keyboard) into the clientData's fields
+        fscanf(stdin, "%15s%15s%lf", clientData.lastName, clientData.firstName, &clientData.balance);
+        
+        // seek position(offset or displacement) in file according the account number
+        // SEEK_SET means to move the file pointer from the "beginning" of the file
+        // SEEK_CUR means to move the file pointer from the "current location" of the file
+        // SEEK_END means to move the file pointer from the "end" of the file
+        fseek(fPtr, (clientData.account - 1) * sizeof(ClientData), SEEK_SET);
+        
+        puts("[writing data into the file...]");
+        // write struct into the file
+        fwrite(&clientData, sizeof(ClientData), 1, fPtr);
+        
+        // clean data struct object
+        cleanClientData(&clientData);
+        /*clientData.account = 0;
+        memset(clientData.lastName, '\0', sizeof(clientData.lastName));
+        memset(clientData.firstName, '\0', sizeof(clientData.firstName));
+        clientData.balance = 0.0;*/
+        
+        // ask for the next account number
+        printf("%s", "Enter account number(from 1 to 100, 0 to end the input): ");
+        scanf("%d", &clientData.account);
+    }
+    
+    puts("Closing the file");
+    fclose(fPtr); // close the file
+}
+
+void readRandomAccessFile(void) {
+    FILE * pFile = NULL; // pointer to the file
+    
+    // open the file for reading in binary mode "rb"
+    if ((pFile = fopen("accounts.dat", "rb")) == NULL) {
+        puts("File could not be openned");
+        return;
+    }
+    
+    ClientData clientData = {
+        .account = 0,
+        .lastName = "",
+        .firstName = "",
+        .balance = 0.0,
+    };
+    size_t result = 0;
+    
+    printf("%-12s%-16s%-11s%10s\n", "Account", "Last name", "First name", "Balance");
+    
+    // read all the file (pFile moves forward automatically)
+    while (!feof(pFile)) {
+        
+        // read the file, pFile moves forward automatically
+        result = fread(&clientData, sizeof(clientData), 1, pFile);
+        
+        // display read information
+        if (result != 0 && clientData.account != 0) {
+            printf("%-12d%-16s%-11s%10.2f\n",
+                   clientData.account,
+                   clientData.lastName,
+                   clientData.firstName,
+                   clientData.balance
+           );
+           cleanClientData(&clientData);
+        }
+    }
+    
+    fclose(pFile); // close the file
+}
+
+

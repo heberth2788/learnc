@@ -43,7 +43,10 @@
 
 int main(int argc, const char * argv[]) {
     
-    readSequentialAccessFile();
+    readRandomAccessFile();
+//    writeRandomAccessFile();
+//    createRandomAccessFile();
+//    readSequentialAccessFile();
 //    createSequentialAccessFile();
     
 //    testEnums();
