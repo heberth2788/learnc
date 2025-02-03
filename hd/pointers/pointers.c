@@ -122,3 +122,22 @@ void printInfo(void) {
     printf("pCurrYear : %p \n", pCurrYear);
     printf("&pCurrYear : %p \n\n", &pCurrYear);
 }
+
+void pointerToPointer(void) {
+    int a = 369;
+    int * aPtr = &a;
+    
+    int ** aPtrPtr = &aPtr; // pointer to pointer
+    printf("a = %d [&a = %p], *aPtr = %d, **aPtrPtr = %d \n", a, &a, *aPtr, **aPtrPtr);
+    printf("aPtr = %p, aPtrPtr = %p \n", aPtr, aPtrPtr);
+    printf("&aPtr = %p, &aPtrPtr = %p \n\n", &aPtr, &aPtrPtr);
+    
+    void * aVoidPtrPtr = aPtr; // void pointer
+    printf("a = %d [&a = %p], *aPtr = %d, *(int *)aVoidPtrPtr = %d \n", a, &a, *aPtr, *(int *)aVoidPtrPtr);
+    printf("aPtr = %p, aVoidPtrPtr = %p \n", aPtr, aVoidPtrPtr);
+    printf("&aPtr = %p, &aVoidPtrPtrAux = %p \n\n", &aPtr, &aVoidPtrPtr);
+    
+    void * bPtr = aPtrPtr; // Parsing "int **" to "void *"
+    int ** cPtr = bPtr; // Parsing "void *" to "int **"
+    printf("**cPtr = %d \n\n", **cPtr);
+}

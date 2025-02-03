@@ -20,8 +20,10 @@
 #include "string/stringlib.h"
 #include "structunionbitsenum/bits.h"
 #include "structunionbitsenum/enums.h"
-#include "preprocessor/preprocessor.h"*/
-#include "fileprocessing/fileprocessing.h"
+#include "preprocessor/preprocessor.h"
+#include "fileprocessing/fileprocessing.h"*/
+#include "datastructures/datastructure.h"
+#include "pointers/pointers.h"
 
 /*
     The "main" function does not need prototype,
@@ -43,7 +45,15 @@
 
 int main(int argc, const char * argv[]) {
     
-    readRandomAccessFile();
+//    pointerToPointer();
+    
+//    myLinkedList();
+//    testLinkedList();
+//    testLinkedListWithMemMgmt();
+    
+    callFooBar();
+    
+//    readRandomAccessFile();
 //    writeRandomAccessFile();
 //    createRandomAccessFile();
 //    readSequentialAccessFile();
