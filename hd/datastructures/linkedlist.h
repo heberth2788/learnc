@@ -1,15 +1,16 @@
 //
-//  datastructure.h
+//  linkedlist.h
 //  hd
 //
-//  Created by Heberth Deza on 29/01/25.
+//  Created by Heberth Deza on 3/02/25.
 //
 
-#ifndef datastructure_h
-#define datastructure_h
+#ifndef linkedlist_h
+#define linkedlist_h
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 // definning the self-referential structure for the linked-list node
 typedef struct listNode {
@@ -20,7 +21,7 @@ typedef struct listNode {
 typedef ListNode * ListNodePtr; // ListNodePtr = ListNode *
 
 void myLinkedList(void);
-void showInstructions(void);
+void showInstructionsLinkedList(void);
 void insertNode(ListNode ** listPtr, char letter);
 void deleteNode(ListNode ** listPtr, char letter);
 void printLinkedListMemMgmt(ListNode * listPtr);
@@ -36,4 +37,4 @@ void callFooBar(void);
 void fooBar(int * myIntP);
 void barFoo(int myInt);
 
-#endif /* datastructure_h */
+#endif /* linkedlist_h */

@@ -21,9 +21,11 @@
 #include "structunionbitsenum/bits.h"
 #include "structunionbitsenum/enums.h"
 #include "preprocessor/preprocessor.h"
-#include "fileprocessing/fileprocessing.h"*/
-#include "datastructures/datastructure.h"
+#include "fileprocessing/fileprocessing.h"
+#include "datastructures/linkedlist.h"
 #include "pointers/pointers.h"
+#include "datastructures/stack.h"*/
+#include "datastructures/queues.h"
 
 /*
     The "main" function does not need prototype,
@@ -45,13 +47,15 @@
 
 int main(int argc, const char * argv[]) {
     
-//    pointerToPointer();
+    myQueue();
     
+//    myStack();
+    
+//    pointerToPointer();
 //    myLinkedList();
 //    testLinkedList();
 //    testLinkedListWithMemMgmt();
-    
-    callFooBar();
+//    callFooBar();
     
 //    readRandomAccessFile();
 //    writeRandomAccessFile();

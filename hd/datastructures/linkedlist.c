@@ -1,11 +1,11 @@
 //
-//  datastructure.c
+//  linkedlist.c
 //  hd
 //
-//  Created by Heberth Deza on 29/01/25.
+//  Created by Heberth Deza on 3/02/25.
 //
 
-#include "datastructure.h"
+#include "linkedlist.h"
 
 /**
     Data structures could be classified by:
@@ -59,7 +59,7 @@ void myLinkedList(void) {
     
     puts("\tLINKED-LIST data structure\n");
     
-    showInstructions();
+    showInstructionsLinkedList();
     printf("%s", "? ");
     scanf("\n%d", &choice);
     
@@ -69,21 +69,21 @@ void myLinkedList(void) {
                 printf("%s", "Enter the character to insert: ");
                 scanf("\n%c", &pivotLetter);
                 insertNode(&startPtr, pivotLetter);
-                printLinkedList(&startPtr);
+                printLinkedList(startPtr);
                 break;
                 
             case 2:
                 printf("%s", "Enter the character to delete: ");
                 scanf("\n%c", &pivotLetter);
                 deleteNode(&startPtr, pivotLetter);
-                printLinkedList(&startPtr);
+                printLinkedList(startPtr);
                 break;
                 
             default:
                 printf("[%d] %s\n\n", choice, "is an invalid option, try again");
                 break;
         }
-        showInstructions();
+        showInstructionsLinkedList();
         printf("%s", "? ");
         scanf("%d", &choice);
     }
@@ -99,7 +99,7 @@ void insertNode(ListNode ** listPtr, char letter) {
     };*/
     
     // memory allocation for the new node to insert
-    // this will survie in memory until call it inside the "free" method
+    // this will survive in memory until call it inside the "free" method
     ListNode * newNodePtr = malloc(sizeof(ListNode));
     if(newNodePtr == NULL) { // check if not memory available
         printf("'%c' could not be inserted because of no memory available", letter);
@@ -116,36 +116,74 @@ void insertNode(ListNode ** listPtr, char letter) {
     }
     
     //there is at least one element in the linked-list
-    ListNode currentNode = **listPtr;
-    ListNode previousNode = { };
+    ListNode * currentNodePtr = *listPtr;
+    ListNode * previousNodePtr = NULL;
     
     // iterate linked-list to find the location for the new node
-    while (letter > currentNode.letter) {
+    while (letter > currentNodePtr->letter) {
         // save previous  node
-        previousNode = currentNode;
+        previousNodePtr = currentNodePtr;
         // check if last node( it points to NULL)
-        if (currentNode.nextNodePtr == NULL) {
+        if (currentNodePtr->nextNodePtr == NULL) {
+            currentNodePtr = NULL;
             break;
         }
         // compare if greather than, then update current node
-        currentNode = *(currentNode.nextNodePtr);
+        currentNodePtr = currentNodePtr->nextNodePtr;
     }
     
     // update new node to points to the current node
-    newNodePtr->nextNodePtr = &currentNode;
+    newNodePtr->nextNodePtr = currentNodePtr;
     
     // update the new node to points to the node pointed by the current node
-    previousNode.nextNodePtr = newNodePtr;
+    previousNodePtr->nextNodePtr = newNodePtr;
     
     printf("\t[Inserted: %c]\n", letter);
 }
 
 void deleteNode(ListNode ** listPtr, char letter) {
+    if (listPtr == NULL || *listPtr == NULL) {
+        puts("Empty linked-list");
+        return;
+    }
+    
+    bool isFound = false;
+    ListNode * currentNodePtr = *listPtr;
+    ListNode * previousNodePtr = NULL;
+    
+    // iterate the linked-list and find the letter in nodes
+    while (currentNodePtr != NULL) {
+        if (letter == currentNodePtr->letter) {
+            isFound = true;
+            break;
+        }
+        previousNodePtr = currentNodePtr;
+        currentNodePtr = currentNodePtr->nextNodePtr;
+    }
+    
+    // if not found
+    if(!isFound) {
+        printf("\t[Not found: %c]\n", letter);
+        return;
+    }
+    
+    // if found at the beginning
+    if (previousNodePtr == NULL) {
+        *listPtr = currentNodePtr->nextNodePtr;
+        free(currentNodePtr);
+        currentNodePtr = NULL;
+        printf("\t[Deleted: %c]\n", letter);
+        return;
+    }
+    
+    previousNodePtr->nextNodePtr = currentNodePtr->nextNodePtr;
+    free(currentNodePtr);
+    currentNodePtr = NULL;
     printf("\t[Deleted: %c]\n", letter);
 }
 
-void showInstructions(void) {
-    puts("Enter your choise:\n"
+void showInstructionsLinkedList(void) {
+    puts("Enter your choice:\n"
          "\t1 to insert an element in the linked-list.\n"
          "\t2 to delete an element from the linked-list.\n"
          "\t3 to exit.");
@@ -172,7 +210,7 @@ void testLinkedList(void) {
 }
 
 void printLinkedList(ListNode * listPtr) {
-    printf("Printing linked-list: ");
+    printf("%s", "Printing linked-list: ");
     
     if (listPtr == NULL) {
         puts("Empty linked-list");
@@ -315,7 +353,7 @@ void callFooBar(void) {
     a = 369;
     printf("(5) %d\n", a);
     barFoo(a); // pass by value (a copy of the variable)
-    printf("%d\n\n", *aPtr); // the original 'a' has not been modified
+    printf("%d\n\n", a); // the original 'a' has not been modified
 }
 
 // A pointer(or pointer to pointer) as parameter, could by

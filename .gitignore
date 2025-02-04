@@ -52,5 +52,6 @@ Mkfile.old
 dkms.conf
 
 # START - HD
-hd.xcodeproj/*
+hd.xcodeproj/
+.xcbkptlist
 # END - HD
