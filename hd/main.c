@@ -25,8 +25,9 @@
 #include "datastructures/linkedlist.h"
 #include "pointers/pointers.h"
 #include "datastructures/stack.h"
-#include "datastructures/queues.h"*/
-#include "datastructures/datastructure.h"
+#include "datastructures/queues.h"
+#include "datastructures/datastructure.h"*/
+#include "datastructures/tree.h"
 
 /*
     The "main" function does not need prototype,
@@ -48,7 +49,9 @@
 
 int main(int argc, const char * argv[]) {
     
-    testLinkedListWithMemMgmt();
+    myBinaryTree();
+    
+//    testLinkedListWithMemMgmt();
     
 //    myQueue();
     
