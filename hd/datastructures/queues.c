@@ -73,6 +73,10 @@ void enqueue(QueueNode ** tailNodePtr, QueueNode ** headNodePtr, int data) {
         return;
     }
     
+    // Incorrect, these two lines below does not modify the original object(struct)
+    //QueueNode queueNodeAux = **tailNodePtr;
+    //queueNodeAux.nextNodePtr = newNode;
+    
     QueueNode * pivotNode = *tailNodePtr;
     pivotNode->nextNodePtr = newNode;
 //    (*tailNodePtr)->nextNodePtr = newNode; // same as the above line

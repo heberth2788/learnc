@@ -24,8 +24,9 @@
 #include "fileprocessing/fileprocessing.h"
 #include "datastructures/linkedlist.h"
 #include "pointers/pointers.h"
-#include "datastructures/stack.h"*/
-#include "datastructures/queues.h"
+#include "datastructures/stack.h"
+#include "datastructures/queues.h"*/
+#include "datastructures/datastructure.h"
 
 /*
     The "main" function does not need prototype,
@@ -47,7 +48,9 @@
 
 int main(int argc, const char * argv[]) {
     
-    myQueue();
+    testLinkedListWithMemMgmt();
+    
+//    myQueue();
     
 //    myStack();
     

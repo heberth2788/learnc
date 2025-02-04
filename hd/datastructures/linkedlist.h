@@ -24,14 +24,7 @@ void myLinkedList(void);
 void showInstructionsLinkedList(void);
 void insertNode(ListNode ** listPtr, char letter);
 void deleteNode(ListNode ** listPtr, char letter);
-void printLinkedListMemMgmt(ListNode * listPtr);
 void printLinkedList(ListNode * listPtr);
-
-void testLinkedList(void);
-void testLinkedListWithMemMgmt(void);
-void addNodes(ListNode ** startNodePtr);
-void freeNodes(ListNode ** startNodePtr);
-
 
 void callFooBar(void);
 void fooBar(int * myIntP);
