@@ -190,17 +190,16 @@ void printLinkedList(ListNode * listPtr) {
         return;
     }
     
-    //ListNode currentNode = **listPtr;
-    ListNode * currentNode = listPtr;
+    ListNode * currentNodePr = listPtr;
     
     // iterate the linked-list
-    while (currentNode->nextNodePtr != NULL) {
+    while (currentNodePr->nextNodePtr != NULL) {
         // print data of the current node
-        printf("[%c] ", currentNode->letter);
+        printf("[%c] ", currentNodePr->letter);
         // update the current node
-        currentNode = currentNode->nextNodePtr;
+        currentNodePr = currentNodePr->nextNodePtr;
     }
-    printf("[%c] \n", currentNode->letter);
+    printf("[%c] \n", currentNodePr->letter);
 }
 
 void showInstructionsLinkedList(void) {
@@ -248,7 +247,7 @@ void fooBar(int * myIntP) {
     *myIntP += 3; // dereferencing to modify the original value
     printf("%d\n", *myIntP);
     
-    int myIntInside = 963;
+    int myIntInside = *myIntP;
     myIntP = &myIntInside; // wrong, this update only the local copy, not the original value
     *myIntP += 3;
 }

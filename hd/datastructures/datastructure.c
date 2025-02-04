@@ -44,7 +44,7 @@ void testLinkedListWithMemMgmt(void) {
 }
 
 void addNodes(ListNode ** startNodePtr) {
-    // create and and nodes
+    // create new nodes wioth malloc(stored in the head memory)
     ListNode * nodeAptr = malloc(sizeof(ListNode));
     nodeAptr->letter = 'a';
     nodeAptr->nextNodePtr = NULL;
@@ -76,7 +76,7 @@ void addNodes(ListNode ** startNodePtr) {
 }
 
 void freeNodes(ListNode ** startNodePtr) {
-    if (startNodePtr == NULL) {
+    if (startNodePtr == NULL || *startNodePtr == NULL) {
         puts("Empty linked-list");
         return;
     }
@@ -84,24 +84,14 @@ void freeNodes(ListNode ** startNodePtr) {
     ListNode * pivotNodePtr = NULL;
     ListNode * currentNodePtr = *startNodePtr;
     
-    if (currentNodePtr == NULL) {
-        puts("NULL");
-        return;
-    }
     printf("%s", "Freeing nodes: ");
-    // iterate the linked-list
-    while (currentNodePtr->nextNodePtr != NULL) {
-        // save surrent node to free
+    while (currentNodePtr != NULL) {
         pivotNodePtr = currentNodePtr;
-        // update the current node
         currentNodePtr = currentNodePtr->nextNodePtr;
-        // freeing pivot node
         printf("[%c] ", pivotNodePtr->letter);
         free(pivotNodePtr);
     }
-    // freeing the last one node
-    printf("[%c] \n", currentNodePtr->letter);
-    free(currentNodePtr);
+    puts("");
 }
 
 void printLinkedListA(ListNode * listPtr) {
@@ -112,17 +102,16 @@ void printLinkedListA(ListNode * listPtr) {
         return;
     }
     
-    //ListNode currentNode = **listPtr;
-    ListNode * currentNode = listPtr;
+    ListNode * currentNodePtr = listPtr;
     
     // iterate the linked-list
-    while (currentNode->nextNodePtr != NULL) {
+    while (currentNodePtr->nextNodePtr != NULL) {
         // print data of the current node
-        printf("[%c] ", currentNode->letter);
+        printf("[%c] ", currentNodePtr->letter);
         // update the current node
-        currentNode = currentNode->nextNodePtr;
+        currentNodePtr = currentNodePtr->nextNodePtr;
     }
-    printf("[%c] \n", currentNode->letter);
+    printf("[%c] \n", currentNodePtr->letter);
 }
 
 void printLinkedListB(ListNode * listPtr) {
