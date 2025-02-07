@@ -32,10 +32,20 @@ void myBinaryTree(void) {
         printf("%3d ", item);
         insertTreeNode(&headNodePtr, item);
     }
-    puts("");
+    
+    puts("\nPrinting tree in order");
+    printInOrder(headNodePtr);
+    
+    puts("\n\nPrinting tree in pre-order");
+    printInPreOrder(headNodePtr);
+    
+    puts("\n\nPrinting tree in post-order");
+    printInPostOrder(headNodePtr);
+    
+    puts("\n");
 }
 
-// recursive algorithm
+// recursive algorithm to insert a node into a tree
 void insertTreeNode(TreeNode ** headNodePtr, int num) {
     // check if NULL
     if (headNodePtr == NULL || *headNodePtr == NULL) {
@@ -62,5 +72,33 @@ void insertTreeNode(TreeNode ** headNodePtr, int num) {
         insertTreeNode(&((*headNodePtr)->leftNodePtr), num);
     } else { // if equal, omit value
         puts("[duplicated]");
+    }
+}
+
+// recursive algorithm to print the tree in order
+void printInOrder(TreeNode * headNodePtr) {
+    if(headNodePtr != NULL) {
+        printInOrder(headNodePtr->leftNodePtr);
+        printf("[%d] ", headNodePtr->data);
+        printInOrder(headNodePtr->rightNodePtr);
+    }
+}
+
+// recursive algorithm to print the tree in pre-order
+void printInPreOrder(TreeNode * headNodePtr) {
+    if(headNodePtr != NULL) {
+        printf("[%d] ", headNodePtr->data);
+        printInOrder(headNodePtr->rightNodePtr);
+        printInOrder(headNodePtr->leftNodePtr);
+    }
+}
+
+
+// recursive algorithm to print the tree in post-order
+void printInPostOrder(TreeNode * headNodePtr) {
+    if(headNodePtr != NULL) {
+        printInOrder(headNodePtr->leftNodePtr);
+        printInOrder(headNodePtr->rightNodePtr);
+        printf("[%d] ", headNodePtr->data);
     }
 }

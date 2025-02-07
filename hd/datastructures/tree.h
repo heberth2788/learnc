@@ -20,5 +20,8 @@ typedef struct treeNode {
 
 void myBinaryTree(void);
 void insertTreeNode(TreeNode ** headNodePtr, int num);
+void printInOrder(TreeNode * headNodePtr);
+void printInPreOrder(TreeNode * headNodePtr);
+void printInPostOrder(TreeNode * headNodePtr);
 
 #endif /* tree_h */
