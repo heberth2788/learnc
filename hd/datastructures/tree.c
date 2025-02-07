@@ -13,7 +13,7 @@
        Non-linear data structure (two dimensional data structure)
        Binary tree, a 'Parent node' contains two links(self-referential right and left childs)
        Root node: is the first node in the tree.
-       Siblings: right and child nodes at the same level (same Parent).
+       Siblings: child nodes at the same level (same Parent).
        Leaft node: a node without children.
  */
 
@@ -35,8 +35,11 @@ void myBinaryTree(void) {
     puts("");
 }
 
+// recursive algorithm
 void insertTreeNode(TreeNode ** headNodePtr, int num) {
-    if (*headNodePtr == NULL) {
+    // check if NULL
+    if (headNodePtr == NULL || *headNodePtr == NULL) {
+        // create the tree-node
         TreeNode * newNode = malloc(sizeof(TreeNode));
         if (newNode == NULL) {
             printf("\t[%d] could not be inserted, no memory available\n", num);
@@ -51,11 +54,11 @@ void insertTreeNode(TreeNode ** headNodePtr, int num) {
         return;
     }
     
-    // store the num of the parent
-    int parentNum = (*headNodePtr)->data;
-    if (num > parentNum) {// if num is grater than headNum, put it on the right node
+    
+    int parentNum = (*headNodePtr)->data; // store the parent's num
+    if (num > parentNum) {// if num is grater than headNum, put it on the right child
         insertTreeNode(&((*headNodePtr)->rightNodePtr), num);
-    } else if (num < parentNum) { // if num is less than headNum, put it on the left node
+    } else if (num < parentNum) { // if num is less than headNum, put it on the left child
         insertTreeNode(&((*headNodePtr)->leftNodePtr), num);
     } else { // if equal, omit value
         puts("[duplicated]");
