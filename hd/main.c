@@ -26,8 +26,9 @@
 #include "pointers/pointers.h"
 #include "datastructures/stack.h"
 #include "datastructures/queues.h"
-#include "datastructures/datastructure.h"*/
-#include "datastructures/tree.h"
+#include "datastructures/datastructure.h
+#include "datastructures/tree.h""*/
+#include "bigonotation/bigonotation.h"
 
 /*
     The "main" function does not need prototype,
@@ -49,7 +50,9 @@
 
 int main(int argc, const char * argv[]) {
     
-    myBinaryTree();
+    selectionSort();
+    
+//    myBinaryTree();
     
 //    testLinkedListWithMemMgmt();
     
