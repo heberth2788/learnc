@@ -13,5 +13,9 @@
 #include <time.h>
 
 void selectionSort(void);
+void insertionSort(void);
+
+void generateRandomElements(int * array, size_t length);
+void printArrayElements(int * array, size_t length);
 
 #endif /* bigonotation_h */

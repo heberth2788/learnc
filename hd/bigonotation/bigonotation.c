@@ -31,29 +31,22 @@
         Bucket sort
  */
 
-#define MAX_LENG 10
+#define MAX_LENGTH 10
 
 void selectionSort(void) {
     
     puts("\tSELECTION sort algorithm\n");
     
     srand(time(NULL));
-    int  myList[MAX_LENG] = { 0 };
-    
-    puts("Random elements to sort:");
-    for (int i = 0; i < MAX_LENG; i++) {
-        myList[i] = rand() % MAX_LENG;
-        printf("[%d] = %d\n", i, myList[i]);
-    }
-    puts("");
+    int  myList[MAX_LENGTH] = { 0 };
+    generateRandomElements(myList, MAX_LENGTH);
 
     puts("Running...\n");
-    
     int pivot = 0;
     size_t minorIndex = 0;
-    for (size_t i = 0; i < MAX_LENG; i++) {
+    for (size_t i = 0; i < MAX_LENGTH; i++) {
         minorIndex = i;
-        for (size_t j = i + 1; j < MAX_LENG; j++) {
+        for (size_t j = i + 1; j < MAX_LENGTH; j++) {
             if (myList[minorIndex] > myList[j]) {
                 minorIndex = j;
             }
@@ -63,8 +56,52 @@ void selectionSort(void) {
         myList[minorIndex] = pivot;
     }
     
+    printArrayElements(myList, MAX_LENGTH);
+}
+
+void insertionSort(void) {
+    puts("\t INSERTION sort algortihm\n");
+    
+    int myList[MAX_LENGTH] = { 0 };
+    generateRandomElements(myList, MAX_LENGTH);
+    
+    puts("Running...\n");
+    int pivot = 0;
+    for (size_t i = 1; i < MAX_LENGTH; i++) {
+        pivot = myList[i];
+        for (size_t j = i - 1; j >= 0; j--) {
+            if (pivot < myList[j]) {
+                myList[j + 1] = myList[j];
+                if (j == 0) {
+                    myList[j] = pivot;
+                }
+                continue;
+            }
+            myList[j + 1] = pivot;
+            break;
+        }
+    }
+    
+    printArrayElements(myList, MAX_LENGTH);
+}
+
+void generateRandomElements(int * array, size_t length) {
+    puts("Random elements to sort:");
+    srand(NULL);
+    for (size_t i = 0; i < length; i++) {
+        array[i] = rand() % length;
+        printf("[%lu] = %d\n", i, array[i]);
+    }
+    puts("");
+}
+
+void foobar(unsigned uNum) {
+    
+}
+
+void printArrayElements(int * array, size_t length) {
     puts("Printing sorted list:");
-    for (int i = 0; i < MAX_LENG; i++) {
-        printf("[%d] = %d\n", i, myList[i]);
+    for (size_t i = 0; i < length; i++) {
+        printf("[%lu] = %d\n", i, array[i]);
     }
 }
