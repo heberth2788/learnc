@@ -51,7 +51,8 @@
 int main(int argc, const char * argv[]) {
     
 //    selectionSort();
-    insertionSort();
+//    insertionSort();
+    mergeSort();
     
 //    myBinaryTree();
     
