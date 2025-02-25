@@ -27,8 +27,9 @@
 #include "datastructures/stack.h"
 #include "datastructures/queues.h"
 #include "datastructures/datastructure.h
-#include "datastructures/tree.h""*/
-#include "bigonotation/bigonotation.h"
+#include "datastructures/tree.h""
+#include "bigonotation/bigonotation.h"*/
+#include "othertopics/variablelengtharguments.h"
 
 /*
     The "main" function does not need prototype,
@@ -48,11 +49,13 @@
             - Notes: "envp" means "environment variables"
  */
 
-int main(int argc, const char * argv[]) {
+int main2(int argc, const char * argv[]) {
+    
+    varLengthArg();
     
 //    selectionSort();
 //    insertionSort();
-    mergeSort();
+//    mergeSort();
     
 //    myBinaryTree();
     
