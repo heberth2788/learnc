@@ -7,6 +7,9 @@
 
 #include "variablelengtharguments.h"
 
+// Define a global variable, to use it on "compilemultiplesourcefiles.h"
+int MY_GLOBAL_VAR;
+
 /**
     For variable-length argument list, we can use ellipsis.
     Ellipsis (...) means that a function can recive variable number of arguments of any type, ellipsis
@@ -18,7 +21,6 @@
     Variable arguments header: <stdarg.h>
         va_list, va_start, va_arg, va_end
  */
-
 double average(int i, ...) {
     double total = 0.0;
     

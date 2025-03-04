@@ -29,13 +29,15 @@
 /**
     Copy a file into another file
  
+    Use:
+        hd myFile.txt yourFile.txt
+ 
     3 Agruments:
         [0] : binary name. E.g: hd
         [1]: input file name. E.g: myFile.txt
         [2]: output file name. E.g: yourFile.txt
  
-    Use:
-        hd myFile.txt yourFile.txt
+    
  */
 int main(int argc, const char * argv[]) {
 
