@@ -39,7 +39,7 @@
  
     
  */
-int main(int argc, const char * argv[]) {
+int main2(int argc, const char * argv[]) {
 
     if (argc != 3) {
         puts("Usage: hd infile outfile.");
@@ -74,4 +74,5 @@ int main(int argc, const char * argv[]) {
     fclose(outFile);
     
     printf("Success coping the file %s to the file %s\n", argv[1], argv[2]);
+    exit(EXIT_SUCCESS);
 }

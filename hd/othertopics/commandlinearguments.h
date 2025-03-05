@@ -9,5 +9,6 @@
 #define commandlinearguments_h
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #endif /* commandlinearguments_h */
