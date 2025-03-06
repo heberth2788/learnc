@@ -18,7 +18,7 @@
         It takes as argument another function's name.
  */
 
-int main(void) {
+int main3(void) {
     atexit(gotTheEnd); // register the funtion to invoke at the end of the program
     puts("Enter 1 to terminate the program by exit function or 2 to terminate the program normally:");
     int answer = 0;
@@ -29,6 +29,7 @@ int main(void) {
         exit(EXIT_SUCCESS); // finish by exit-success
     }
     puts("End normally"); // finish by reaching the end of "main"
+    return 0;
 }
 
 void gotTheEnd(void) {
