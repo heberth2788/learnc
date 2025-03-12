@@ -15,6 +15,8 @@
 #include <string.h>
 #include <stdbool.h> // to use 'bool' data type and 'true', 'false'
 #include <complex.h> // to use 'complex' numbers
+#include <stdlib.h> // to use 'malloc'
+#include <tgmath.h> // to use type-generic math: E.g: sin(x)
 
 typedef struct {
     int x;
@@ -26,5 +28,7 @@ void testMyFooBar2(void);
 void testComplexNum(void);
 void testMacroWithVariableLengthArg(void);
 void testRestrictKeyword(void);
+void testFlexibleArrayMembers(void);
+void testTypeGenericMath(void);
 
 #endif /* c99c11c18_h */

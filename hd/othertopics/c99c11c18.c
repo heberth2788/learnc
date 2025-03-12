@@ -70,4 +70,25 @@ void testRestrictKeyword(void) {
     int * restrict ptrInt; // restricted pointer to an 'int'
 }
 
+// use flexible-array members
+void testFlexibleArrayMembers(void) {
+    
+    struct myStruct {
+        int arraySize;
+        // flexible array member
+        int array[]; // it should be declared at the end of a 'struct'
+    };
+    
+    int desiredSize = 6;
+    struct myStruct * ptrS = NULL;
+    
+    // getting memory for the flexible array member
+    ptrS = malloc(sizeof(struct myStruct) + sizeof(int) * desiredSize);
+}
 
+// use of <tgmath.h> for type-generic math
+void testTypeGenericMath(void) {
+    float a = sin(1988.5F); // call to 'sinf(float)'
+    double b = sin(1988.5); // call to 'sin(double)'
+    long double c = sin(1988.5L); // call to 'sinl(long double)'
+}
