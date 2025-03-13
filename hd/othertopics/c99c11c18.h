@@ -30,5 +30,7 @@ void testMacroWithVariableLengthArg(void);
 void testRestrictKeyword(void);
 void testFlexibleArrayMembers(void);
 void testTypeGenericMath(void);
+void testInlineFunction(void);
+inline int myInlineFun(int, int);
 
 #endif /* c99c11c18_h */

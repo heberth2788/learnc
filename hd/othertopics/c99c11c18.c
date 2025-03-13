@@ -92,3 +92,16 @@ void testTypeGenericMath(void) {
     double b = sin(1988.5); // call to 'sin(double)'
     long double c = sin(1988.5L); // call to 'sinl(long double)'
 }
+
+// use of 'inline' functions, the compiler replace every call to an inline
+// function with a copy of the function code body
+void testInlineFunction(void) {
+    int resA = myInlineFun(1988, 1987);
+    resA = myInlineFun(1989, 1988);
+    resA = myInlineFun(1990, 1989);
+}
+
+// 'inline' function should be short and called frequently in other sides of the code
+inline int myInlineFun(int a, int b) {
+    return a + b;
+}
