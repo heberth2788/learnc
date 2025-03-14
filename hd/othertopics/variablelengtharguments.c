@@ -20,6 +20,7 @@ int MY_GLOBAL_VAR;
  
     Variable arguments header: <stdarg.h>
         va_list, va_start, va_arg, va_end
+        * va_copy(__builtin_va_list &, __builtin_va_list &) // macro to copy two 'va_list'
  */
 double average(int i, ...) {
     double total = 0.0;

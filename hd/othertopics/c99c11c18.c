@@ -105,3 +105,25 @@ void testInlineFunction(void) {
 inline int myInlineFun(int a, int b) {
     return a + b;
 }
+
+// pre-processor macros and predefined-identifier
+void testPreProcessorMacros(void) {
+    __FILE__; // current file name (string constant, pre-processor macro)
+    __LINE__; // current line number (decimal integer constant, pre-processor macro)
+    
+    __func__; // current function name (string variable, predefined identifier)
+    char thisFuncName[333] = { 0 };
+    memcpy(thisFuncName, __func__, sizeof(__func__));
+}
+
+// C11/C18 headers, some features are considered optional
+void c11c18Headers(void) {
+    // <stdalign.h> // type-alignment controls
+    // <stdatomic.h> // uninterruptible access to object used in multithreading
+    // <stdnoreturn.h> // non-return functions
+    // <stdthreads.h> // thread library
+    // <uchar.h> // UTF-16 and UTF-32 character utilities
+    
+    // quick_exit(int) // allow to call up to at least 32 other functions to perfom cleanup tasks
+    // at_quick_exit(void (*)(void)) //  register up to at least 32 cleanup tasks
+}

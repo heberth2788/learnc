@@ -15,7 +15,7 @@
 #include <string.h>
 #include <stdbool.h> // to use 'bool' data type and 'true', 'false'
 #include <complex.h> // to use 'complex' numbers
-#include <stdlib.h> // to use 'malloc'
+#include <stdlib.h> // to use 'malloc', 'quick_exit' and 'at_quick_exit' functions
 #include <tgmath.h> // to use type-generic math: E.g: sin(x)
 
 typedef struct {
@@ -32,5 +32,7 @@ void testFlexibleArrayMembers(void);
 void testTypeGenericMath(void);
 void testInlineFunction(void);
 inline int myInlineFun(int, int);
+void testPreProcessorMacros(void);
+void c11c18Headers(void);
 
 #endif /* c99c11c18_h */
