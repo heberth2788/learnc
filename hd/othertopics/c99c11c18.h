@@ -34,5 +34,7 @@ void testInlineFunction(void);
 inline int myInlineFun(int, int);
 void testPreProcessorMacros(void);
 void c11c18Headers(void);
+_Noreturn void myExit(int myStatus);
+_Noreturn void myInfiniteLoop(void);
 
 #endif /* c99c11c18_h */

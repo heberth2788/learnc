@@ -126,4 +126,37 @@ void c11c18Headers(void) {
     
     // quick_exit(int) // allow to call up to at least 32 other functions to perfom cleanup tasks
     // at_quick_exit(void (*)(void)) //  register up to at least 32 cleanup tasks
+    
+    // Support for UTF-16(16 bits) and UTF-32(32 bits) (UTF: Unicode Transformation Format)
+    // New types: char16_t, char32_t
+    
+    // Support for '_Noreturn' functions
+    
+    // Support for static assertions checked at compile-time using: _Static_assert
+    // to test constants and call 'abort' function if 'false'
 }
+
+// _Noreturn function with exit
+_Noreturn void myExit(int myStatus) {
+    printf("My status is: %d", myStatus);
+    exit(0); // terminate without returning
+}
+
+// _Noreturn function with infinite loop
+_Noreturn void myInfiniteLoop(void) {
+    while (1) {
+        puts("infinite loop");
+    } // No returning
+}
+
+/**
+    Concurrency vs Parallelism
+ 
+    Concurrency : switch between multiple tasks
+    Parellelism : executing truly simultaneously (multicore processors)
+ 
+    * Threading:  can have several threads executing 'concurrently'  and others in 'parallel'
+    * First multicore processor: IBM in 2001
+    * Library: <threads.h>
+    
+ */
